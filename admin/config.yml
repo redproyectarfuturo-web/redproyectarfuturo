@@ -4,6 +4,7 @@ backend:
   branch: main
 
 media_folder: "imagenes"
+public_folder: "/imagenes"
 
 locale: 'es'
 
@@ -28,6 +29,7 @@ collections:
     label: "Documentos PDF"
     folder: "_documentos"
     create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Descripción", name: "descripcion", widget: "text" }
@@ -35,4 +37,9 @@ collections:
         name: "categoria"
         widget: "select"
         options: ["Desarrollo local", "Educación cívica", "Tecnología", "Institucional"]
-      - { label: "Archivo PDF", name: "archivo", widget: "file" }
+      - label: "Archivo PDF"
+        name: "archivo"
+        widget: "file"
+        media_library:
+          config:
+            multiple: false
