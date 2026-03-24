@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: redproyectarfuturo-web/redproyectarfuturo
+  name: git-gateway
   branch: main
 
 media_folder: "imagenes"
