@@ -1,0 +1,36 @@
+title: Red Proyectar Futuro
+description: Red de participación ciudadana
+baseurl: ""
+url: "https://redproyectarfuturo-web.github.io"
+
+markdown: kramdown
+permalink: /:categories/:title/
+
+collections:
+  notas:
+    output: true
+    permalink: /notas/:slug/
+  documentos:
+    output: true
+    permalink: /documentos/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "notas"
+    values:
+      layout: "nota"
+  - scope:
+      path: ""
+      type: "documentos"
+    values:
+      layout: "documento"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
