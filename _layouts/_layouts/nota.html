@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<article class="nota-articulo">
+  <header class="nota-header">
+    <div class="nota-meta-top">
+      <span class="categoria">{{ page.categoria }}</span>
+      <time>{{ page.date | date: "%d de %B de %Y" }}</time>
+    </div>
+    <h1 class="nota-titulo">{{ page.title }}</h1>
+    {% if page.resumen %}<p class="nota-resumen">{{ page.resumen }}</p>{% endif %}
+    <div class="nota-autor">
+      <span class="autor-linea"></span>
+      <span>{{ page.autor }}</span>
+    </div>
+  </header>
+  <div class="nota-cuerpo">{{ content }}</div>
+  <footer class="nota-footer">
+    <a href="{{ '/notas/' | relative_url }}" class="volver">← Volver a todas las notas</a>
+  </footer>
+</article>
+
+<style>
+  .nota-articulo { max-width: 720px; margin: 0 auto; }
+  .nota-header { padding-bottom: 2.5rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--gris-claro); }
+  .nota-meta-top { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .categoria { background: var(--azul); color: var(--blanco); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.8rem; font-family: 'Montserrat', sans-serif; }
+  .nota-meta-top time { font-size: 0.85rem; color: var(--gris); font-weight: 300; }
+  .nota-titulo { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.2rem; color: var(--negro); }
+  .nota-resumen { font-size: 1.1rem; color: var(--gris); font-style: italic; font-weight: 300; line-height: 1.6; margin-bottom: 1.5rem; }
+  .nota-autor { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; font-weight: 700; font-family: 'Montserrat', sans-serif; color: var(--verde); }
+  .autor-linea { display: inline-block; width: 32px; height: 3px; background: var(--naranja); }
+  .nota-cuerpo { font-size: 1.05rem; line-height: 1.85; color: #1a1a1a; }
+  .nota-cuerpo p { margin-bottom: 1.4rem; }
+  .nota-cuerpo h2 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700; margin: 2.5rem 0 1rem; color: var(--azul); }
+  .nota-cuerpo h3 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.8rem; color: var(--verde); }
+  .nota-cuerpo blockquote { border-left: 4px solid var(--naranja); padding: 0.5rem 0 0.5rem 1.5rem; margin: 2rem 0; font-style: italic; color: var(--gris); font-size: 1.1rem; background: var(--naranja-claro); }
+  .nota-cuerpo a { color: var(--azul); text-decoration: underline; text-underline-offset: 3px; }
+  .nota-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--gris-claro); }
+  .volver { color: var(--gris); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 600; transition: color 0.2s; }
+  .volver:hover { color: var(--azul); }
+  @media (max-width: 600px) { .nota-titulo { font-size: 1.8rem; } }
+</style>
