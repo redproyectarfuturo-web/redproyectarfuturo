@@ -1,0 +1,287 @@
+---
+layout: default
+title: Inicio
+---
+
+<section class="hero">
+  <div class="hero-label">30 de Agosto, Buenos Aires</div>
+  <h1 class="hero-titulo">
+    <span class="h-naranja">Conectar</span><br>
+    <span class="h-azul">ideas y personas</span><br>
+    <span class="h-verde">para el futuro</span>
+  </h1>
+  <p class="hero-bajada">Somos una red ciudadana independiente que promueve el diálogo, la acción colectiva y la participación activa de cada vecino y vecina de 30 de Agosto.</p>
+  <div class="hero-acciones">
+    <a href="#contacto" class="btn-primario">Sumate a la Red</a>
+    <a href="{{ '/notas/' | relative_url }}" class="btn-secundario">Leer notas →</a>
+  </div>
+</section>
+
+<section class="principios">
+  <div class="principio">
+    <span class="principio-icono naranja">💡</span>
+    <h3>Ideas</h3>
+    <p>Fomentamos el pensamiento crítico y la creatividad como motor de cambio.</p>
+  </div>
+  <div class="principio">
+    <span class="principio-icono azul">🤝</span>
+    <h3>Compromiso</h3>
+    <p>Actuamos con responsabilidad y vínculo real con la comunidad.</p>
+  </div>
+  <div class="principio">
+    <span class="principio-icono verde">🚀</span>
+    <h3>Acción</h3>
+    <p>Transformamos ideas en conversaciones e iniciativas con impacto local.</p>
+  </div>
+</section>
+
+<section class="sobre-la-red">
+  <div class="sobre-texto">
+    <div class="seccion-label">Quiénes somos</div>
+    <h2>Una plataforma de <span class="azul">diálogo</span> y <span class="verde">construcción colectiva</span></h2>
+    <p>La Red Proyectar Futuro es un espacio inclusivo, flexible y colaborativo donde los habitantes de 30 de Agosto pueden reflexionar, intercambiar ideas y aportar propuestas que mejoren la calidad de vida local.</p>
+    <p>Somos y seremos siempre una organización <strong>sin fines de lucro, plural e independiente</strong> de toda adscripción partidaria.</p>
+    <div class="temas">
+      <span class="tema">Educación</span>
+      <span class="tema">Tecnología</span>
+      <span class="tema">Desarrollo local</span>
+      <span class="tema">Participación ciudadana</span>
+    </div>
+  </div>
+  <div class="sobre-mision">
+    <blockquote>
+      "Queremos que cada persona encuentre en la Red no solo un lugar para aportar, sino también para aprender, expresarse y formar parte de una conversación colectiva sobre el desarrollo social."
+    </blockquote>
+  </div>
+</section>
+
+<div class="contenido-grid">
+  <section class="seccion">
+    <div class="seccion-header naranja-borde">
+      <h2>Notas de opinión</h2>
+      <a href="{{ '/notas/' | relative_url }}" class="ver-todo naranja-link">Ver todas →</a>
+    </div>
+    <div class="notas-lista">
+      {% assign notas_recientes = site.notas | sort: 'date' | reverse | limit: 4 %}
+      {% for nota in notas_recientes %}
+      <a href="{{ nota.url | relative_url }}" class="nota-card">
+        <span class="card-cat azul-cat">{{ nota.categoria }}</span>
+        <h3 class="card-titulo">{{ nota.title }}</h3>
+        {% if nota.resumen %}<p class="card-resumen">{{ nota.resumen | truncate: 100 }}</p>{% endif %}
+        <div class="card-meta">
+          <span class="card-autor">{{ nota.autor }}</span>
+          <time>{{ nota.date | date: "%d/%m/%Y" }}</time>
+        </div>
+      </a>
+      {% else %}
+      <p class="vacio">Las primeras notas están en camino. <a href="#contacto">¿Querés escribir una?</a></p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="seccion-header verde-borde">
+      <h2>Documentos</h2>
+      <a href="{{ '/documentos/' | relative_url }}" class="ver-todo verde-link">Ver todos →</a>
+    </div>
+    <div class="docs-lista">
+      {% assign docs_recientes = site.documentos | limit: 4 %}
+      {% for doc in docs_recientes %}
+      <a href="{{ doc.url | relative_url }}" class="doc-card">
+        <div class="doc-icono">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+        <div class="doc-info">
+          <span class="card-cat verde-cat">{{ doc.categoria }}</span>
+          <h3 class="card-titulo">{{ doc.title }}</h3>
+          {% if doc.descripcion %}<p class="card-resumen">{{ doc.descripcion | truncate: 80 }}</p>{% endif %}
+        </div>
+      </a>
+      {% else %}
+      <p class="vacio">Los primeros documentos están en camino.</p>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+<section class="contacto" id="contacto">
+  <div class="contacto-intro">
+    <div class="seccion-label">Participá</div>
+    <h2>Escribinos, proponé, <span class="naranja">sumate</span></h2>
+    <p>La Red se construye con cada vecino y vecina. Podés enviarnos consultas, propuestas, notas de opinión o simplemente contarnos sobre una problemática que te preocupa.</p>
+    <div class="contacto-opciones">
+      <div class="opcion">
+        <span class="opcion-icono azul-bg">✉</span>
+        <div>
+          <strong>Enviar una nota</strong>
+          <p>Escribí sobre un tema que te importe y compartilo con la comunidad.</p>
+        </div>
+      </div>
+      <div class="opcion">
+        <span class="opcion-icono verde-bg">💬</span>
+        <div>
+          <strong>Hacer una propuesta</strong>
+          <p>Tenés una idea para mejorar 30 de Agosto? Contanos.</p>
+        </div>
+      </div>
+      <div class="opcion">
+        <span class="opcion-icono naranja-bg">📋</span>
+        <div>
+          <strong>Consultas generales</strong>
+          <p>Cualquier pregunta sobre la Red, sus actividades o cómo colaborar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="formulario" action="https://formsubmit.co/redproyectarfuturo@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Red Proyectar Futuro">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://redproyectarfuturo-web.github.io/redproyectarfuturo/?enviado=true">
+
+    <div class="campo">
+      <label for="nombre">Tu nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamás?" required>
+    </div>
+
+    <div class="campo">
+      <label for="email">Tu correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="para poder responderte" required>
+    </div>
+
+    <div class="campo">
+      <label for="tipo">Tipo de mensaje</label>
+      <select id="tipo" name="tipo">
+        <option value="consulta">Consulta general</option>
+        <option value="nota">Quiero enviar una nota</option>
+        <option value="propuesta">Tengo una propuesta</option>
+        <option value="problemática">Quiero visibilizar una problemática</option>
+        <option value="colaborar">Quiero colaborar con la Red</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="mensaje">Tu mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos lo que tenés en mente..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn-enviar">Enviar mensaje →</button>
+    <p class="form-nota">Tu mensaje llegará directamente a redproyectarfuturo@gmail.com</p>
+  </form>
+</section>
+
+<style>
+  /* HERO */
+  .hero { padding: 5rem 0 5rem; border-bottom: 1px solid var(--gris-claro); margin-bottom: 5rem; }
+  .hero-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--naranja); font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 1.5rem; }
+  .hero-titulo { font-family: 'Montserrat', sans-serif; font-size: clamp(2.8rem, 7vw, 4.8rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+  .h-naranja { color: var(--naranja); }
+  .h-azul    { color: var(--azul); }
+  .h-verde   { color: var(--verde); }
+  .hero-bajada { font-size: 1.05rem; color: var(--gris); font-weight: 300; max-width: 560px; line-height: 1.7; margin-bottom: 2rem; }
+  .hero-acciones { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primario { background: var(--naranja); color: var(--blanco); text-decoration: none; padding: 0.75rem 1.75rem; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; transition: background 0.2s; }
+  .btn-primario:hover { background: #d4661a; }
+  .btn-secundario { color: var(--azul); text-decoration: none; padding: 0.75rem 1.75rem; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; border: 2px solid var(--azul); transition: all 0.2s; }
+  .btn-secundario:hover { background: var(--azul); color: var(--blanco); }
+
+  /* PRINCIPIOS */
+  .principios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 5rem; }
+  .principio { background: var(--blanco); border: 1px solid var(--gris-claro); padding: 2rem; }
+  .principio-icono { font-size: 2rem; display: block; margin-bottom: 1rem; }
+  .principio h3 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+  .principio p { font-size: 0.9rem; color: var(--gris); font-weight: 300; line-height: 1.6; }
+  .principio:nth-child(1) { border-top: 3px solid var(--naranja); }
+  .principio:nth-child(2) { border-top: 3px solid var(--azul); }
+  .principio:nth-child(3) { border-top: 3px solid var(--verde); }
+
+  /* SOBRE LA RED */
+  .sobre-la-red { display: grid; grid-template-columns: 3fr 2fr; gap: 4rem; margin-bottom: 5rem; padding-bottom: 5rem; border-bottom: 1px solid var(--gris-claro); align-items: start; }
+  .seccion-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 1rem; color: var(--gris); }
+  .sobre-texto h2 { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900; line-height: 1.2; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+  .sobre-texto h2 .azul  { color: var(--azul); }
+  .sobre-texto h2 .verde { color: var(--verde); }
+  .sobre-texto p { font-size: 0.95rem; color: var(--gris); line-height: 1.75; margin-bottom: 1rem; font-weight: 300; }
+  .sobre-texto p strong { color: var(--negro); font-weight: 700; }
+  .temas { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .tema { font-size: 0.72rem; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.8rem; border: 1px solid var(--gris-claro); color: var(--gris); }
+  .sobre-mision blockquote { border-left: 4px solid var(--naranja); padding: 1.5rem; background: var(--naranja-claro); font-style: italic; font-size: 1rem; line-height: 1.7; color: var(--negro); font-weight: 300; }
+
+  /* CONTENIDO */
+  .contenido-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 5rem; }
+  .seccion-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 3px solid; }
+  .naranja-borde { border-color: var(--naranja); }
+  .verde-borde   { border-color: var(--verde); }
+  .seccion-header h2 { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+  .ver-todo { font-size: 0.7rem; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .naranja-link { color: var(--naranja); }
+  .verde-link   { color: var(--verde); }
+  .ver-todo:hover { text-decoration: underline; }
+  .notas-lista, .docs-lista { display: flex; flex-direction: column; gap: 1rem; }
+  .nota-card { display: block; text-decoration: none; color: inherit; padding: 1.25rem; background: var(--blanco); border: 1px solid var(--gris-claro); border-left: 3px solid var(--azul); transition: transform 0.2s, box-shadow 0.2s; }
+  .nota-card:hover { transform: translateX(4px); box-shadow: 2px 4px 16px rgba(31,90,168,0.1); }
+  .card-cat { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 700; display: block; margin-bottom: 0.3rem; }
+  .azul-cat  { color: var(--azul); }
+  .verde-cat { color: var(--verde); }
+  .card-titulo { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.4rem; color: var(--negro); }
+  .card-resumen { font-size: 0.8rem; color: var(--gris); line-height: 1.5; font-weight: 300; margin-bottom: 0.5rem; }
+  .card-meta { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--gris); font-family: 'Montserrat', sans-serif; }
+  .card-autor { font-weight: 700; color: var(--negro); }
+  .doc-card { display: flex; align-items: flex-start; gap: 1rem; text-decoration: none; color: inherit; padding: 1.25rem; background: var(--blanco); border: 1px solid var(--gris-claro); border-left: 3px solid var(--verde); transition: transform 0.2s; }
+  .doc-card:hover { transform: translateX(4px); }
+  .doc-icono { flex-shrink: 0; width: 40px; height: 40px; background: var(--verde-claro); display: flex; align-items: center; justify-content: center; color: var(--verde); }
+  .doc-info { flex: 1; }
+  .vacio { color: var(--gris); font-style: italic; font-size: 0.9rem; font-weight: 300; }
+  .vacio a { color: var(--azul); }
+
+  /* CONTACTO */
+  .contacto { background: var(--blanco); border: 1px solid var(--gris-claro); border-top: 4px solid var(--naranja); padding: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 2rem; }
+  .contacto-intro .seccion-label { color: var(--naranja); }
+  .contacto-intro h2 { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .contacto-intro h2 .naranja { color: var(--naranja); }
+  .contacto-intro > p { font-size: 0.9rem; color: var(--gris); line-height: 1.7; font-weight: 300; margin-bottom: 2rem; }
+  .contacto-opciones { display: flex; flex-direction: column; gap: 1rem; }
+  .opcion { display: flex; align-items: flex-start; gap: 1rem; }
+  .opcion-icono { flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  .azul-bg   { background: var(--azul-claro); }
+  .verde-bg  { background: var(--verde-claro); }
+  .naranja-bg { background: var(--naranja-claro); }
+  .opcion strong { display: block; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.2rem; color: var(--negro); }
+  .opcion p { font-size: 0.8rem; color: var(--gris); font-weight: 300; line-height: 1.5; margin: 0; }
+
+  /* FORMULARIO */
+  .formulario { display: flex; flex-direction: column; gap: 1.25rem; }
+  .campo { display: flex; flex-direction: column; gap: 0.4rem; }
+  .campo label { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--negro); }
+  .campo input, .campo select, .campo textarea {
+    border: 1px solid var(--gris-claro);
+    background: var(--fondo);
+    padding: 0.7rem 1rem;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.95rem;
+    color: var(--negro);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .campo input:focus, .campo select:focus, .campo textarea:focus { border-color: var(--naranja); }
+  .campo textarea { resize: vertical; min-height: 120px; }
+  .btn-enviar { background: var(--naranja); color: var(--blanco); border: none; padding: 0.85rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; cursor: pointer; transition: background 0.2s; text-align: left; }
+  .btn-enviar:hover { background: #d4661a; }
+  .form-nota { font-size: 0.75rem; color: var(--gris); font-weight: 300; }
+
+  @media (max-width: 900px) {
+    .sobre-la-red, .contacto { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  @media (max-width: 768px) {
+    .principios { grid-template-columns: 1fr; }
+    .contenido-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .hero { padding: 3rem 0; }
+    .contacto { padding: 2rem; }
+  }
+</style>
