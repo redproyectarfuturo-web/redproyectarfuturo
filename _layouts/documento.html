@@ -61,4 +61,7 @@ layout: default
   @media (max-width: 600px) { .doc-titulo { font-size: 1.8rem; } .doc-preview iframe { height: 400px; } }
   body { padding-top: 0; }
   .doc-preview iframe { display: block; }
+  :root { --header-height: 73px; }
+  body > header { position: fixed; top: 0; left: 0; right: 0; }
+  body > main { margin-top: var(--header-height); }
 </style>
