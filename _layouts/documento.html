@@ -1,56 +1,59 @@
 ---
 layout: default
-title: Documentos
-permalink: /documentos/
 ---
 
-<div class="pagina-header">
-  <div class="pagina-label">Recursos</div>
-  <h1>Documentos <span>PDF</span></h1>
-  <p>Informes, propuestas y materiales de consulta para la comunidad.</p>
-</div>
-
-<div class="docs-lista">
-  {% assign documentos = site.documentos %}
-  {% for doc in documentos %}
-  <a href="{{ doc.url | relative_url }}" class="doc-card">
-    <div class="doc-icono">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <line x1="16" y1="13" x2="8" y2="13"/>
-        <line x1="16" y1="17" x2="8" y2="17"/>
+<article class="doc-articulo">
+  <header class="doc-header">
+    <div class="doc-meta-top">
+      <span class="categoria">{{ page.categoria }}</span>
+      <span class="tipo-badge">Documento PDF</span>
+    </div>
+    <h1 class="doc-titulo">{{ page.title }}</h1>
+    {% if page.descripcion %}<p class="doc-descripcion">{{ page.descripcion }}</p>{% endif %}
+  </header>
+  {% if page.archivo %}
+  <div class="doc-acciones">
+    <a href="{{ page.archivo }}" class="btn-descargar" target="_blank" download>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
       </svg>
-      <span>PDF</span>
-    </div>
-    <div class="doc-info">
-      <span class="card-cat">{{ doc.categoria }}</span>
-      <h2 class="doc-titulo">{{ doc.title }}</h2>
-      {% if doc.descripcion %}<p class="doc-desc">{{ doc.descripcion | truncate: 150 }}</p>{% endif %}
-    </div>
-    <div class="doc-accion">Ver →</div>
-  </a>
-  {% else %}
-  <p class="vacio">Todavía no hay documentos publicados.</p>
-  {% endfor %}
-</div>
+      Descargar PDF
+    </a>
+    <a href="{{ page.archivo }}" class="btn-ver" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+      Ver en el navegador
+    </a>
+  </div>
+  <div class="doc-preview">
+    <iframe src="{{ page.archivo }}" width="100%" height="700px" title="{{ page.title }}">
+      <p>Tu navegador no puede mostrar el PDF. <a href="{{ page.archivo }}">Descargalo acá</a>.</p>
+    </iframe>
+  </div>
+  {% endif %}
+  <footer class="doc-footer">
+    <a href="/documentos/" class="volver">← Volver a todos los documentos</a>
+  </footer>
+</article>
 
 <style>
-  .pagina-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 3px solid var(--verde); }
-  .pagina-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--verde); font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 0.5rem; }
-  .pagina-header h1 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-  .pagina-header h1 span { color: var(--verde); }
-  .pagina-header p { color: var(--gris); font-weight: 300; }
-  .docs-lista { display: flex; flex-direction: column; gap: 1rem; }
-  .doc-card { display: flex; align-items: center; gap: 1.5rem; text-decoration: none; color: inherit; padding: 1.5rem 2rem; background: var(--blanco); border: 1px solid var(--gris-claro); border-left: 4px solid var(--verde); transition: transform 0.2s, box-shadow 0.2s; }
-  .doc-card:hover { transform: translateX(4px); box-shadow: 2px 4px 16px rgba(46,125,50,0.1); }
-  .doc-icono { flex-shrink: 0; width: 56px; height: 56px; background: var(--verde-claro); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: var(--verde); }
-  .doc-icono span { font-size: 0.52rem; letter-spacing: 0.1em; font-weight: 800; color: var(--verde); font-family: 'Montserrat', sans-serif; }
-  .doc-info { flex: 1; }
-  .card-cat { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--verde); font-family: 'Montserrat', sans-serif; font-weight: 700; display: block; margin-bottom: 0.3rem; }
-  .doc-titulo { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem; color: var(--negro); }
-  .doc-desc { font-size: 0.85rem; color: var(--gris); font-weight: 300; line-height: 1.5; }
-  .doc-accion { flex-shrink: 0; font-size: 0.8rem; font-weight: 700; color: var(--verde); font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
-  .vacio { color: var(--gris); font-style: italic; font-weight: 300; }
-  @media (max-width: 600px) { .doc-card { flex-wrap: wrap; } .doc-accion { display: none; } }
-</style>
+  .doc-articulo { max-width: 860px; margin: 0 auto; }
+  .doc-header { padding-bottom: 2rem; margin-bottom: 2rem; border-bottom: 1px solid var(--gris-claro); }
+  .doc-meta-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+  .categoria { background: var(--verde); color: var(--blanco); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.8rem; font-family: 'Montserrat', sans-serif; }
+  .tipo-badge { font-size: 0.72rem; color: var(--gris); letter-spacing: 0.08em; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 600; border: 1px solid var(--gris-claro); padding: 0.25rem 0.7rem; }
+  .doc-titulo { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--negro); }
+  .doc-descripcion { font-size: 1.05rem; color: var(--gris); font-style: italic; font-weight: 300; line-height: 1.6; }
+  .doc-acciones { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .btn-descargar, .btn-ver { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+  .btn-descargar { background: var(--naranja); color: var(--blanco); }
+  .btn-descargar:hover { background: #d4661a; }
+  .btn-ver { background: transparent; color: var(--azul); border: 2px solid var(--azul); }
+  .btn-ver:hover { background: var(--azul); color: var(--blanco); }
+  .doc-preview { border: 1px solid var(--gris-claro); background: var(--blanco); margin-bottom: 2rem; }
+  .doc-footer { padding-top: 2rem; border-top: 1px solid var(--gris-claro); }
+  .volver { color: va
