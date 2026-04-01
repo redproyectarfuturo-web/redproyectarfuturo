@@ -2,17 +2,16 @@ title: Red Proyectar Futuro
 description: Red de participación ciudadana
 baseurl: ""
 url: "https://redproyectarfuturo.pages.dev"
-
 markdown: kramdown
-permalink: /:categories/:title/
+permalink: pretty
 
 collections:
   notas:
     output: true
-    permalink: /notas/:slug/
+    permalink: /notas/:name/
   documentos:
     output: true
-    permalink: /documentos/:slug/
+    permalink: /documentos/:name/
 
 defaults:
   - scope:
