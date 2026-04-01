@@ -28,4 +28,4 @@ Tal vez el mayor desafío contemporáneo no sea elegir entre Estado o sociedad, 
 
 La transformación profunda ocurre cuando ambos niveles se articulan: cuando la sociedad produce ideas, liderazgos y demandas, y el Estado las convierte en políticas, derechos y horizontes colectivos.
 
-En definitiva, las sociedades que avanzan no son necesariamente las que tienen Estados más grandes, sino aquellas donde existe una conversación permanente entre ciudadanía e instituciones. Porque el cambio político sostenible no se decreta: se construye.
+En definitiva, las sociedades que avanzan no son necesariamente las que tienen Estados más grandes, sino aquellas donde existe una conversación permanente entre ciudadanía e instituciones. Porque el cambio político sostenible no se decreta, sino que se construye.
