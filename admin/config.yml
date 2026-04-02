@@ -11,7 +11,7 @@ locale: 'es'
 collections:
   - name: "notas"
     label: "Notas de opinión"
-    folder: "_notas"
+    folder: "notas"
     create: true
     slug: "{{slug}}"
     fields:
@@ -27,7 +27,7 @@ collections:
 
   - name: "documentos"
     label: "Documentos PDF"
-    folder: "_documentos"
+    folder: "documentos"
     create: true
     slug: "{{slug}}"
     fields:
