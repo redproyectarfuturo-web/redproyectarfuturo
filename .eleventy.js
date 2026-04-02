@@ -6,14 +6,14 @@ module.exports = function(eleventyConfig) {
 
   // Colecciones
   eleventyConfig.addCollection("notas", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("notas/*.md").sort((a, b) => {
-      return b.date - a.date;
-    });
+  return collectionApi.getFilteredByGlob("_notas/*.md").sort((a, b) => {
+    return b.date - a.date;
   });
+});
 
-  eleventyConfig.addCollection("documentos", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("documentos/*.md");
-  });
+eleventyConfig.addCollection("documentos", function(collectionApi) {
+  return collectionApi.getFilteredByGlob("_documentos/*.md");
+});
 
   // Filtro de fecha
   eleventyConfig.addFilter("fechaFormato", function(date) {
