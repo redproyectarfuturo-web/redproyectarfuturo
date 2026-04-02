@@ -1,0 +1,4 @@
+{
+  "layout": "nota",
+  "permalink": "/notas/{{ page.fileSlug }}/"
+}
