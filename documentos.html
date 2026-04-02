@@ -1,0 +1,54 @@
+---
+layout: default
+title: Documentos
+permalink: /documentos/
+---
+<div class="pagina-header">
+  <div class="pagina-label">Recursos</div>
+  <h1>Documentos <span>PDF</span></h1>
+  <p>Informes, propuestas y materiales de consulta para la comunidad.</p>
+</div>
+
+<div class="docs-lista">
+  {% for doc in collections.documentos %}
+  <a href="{{ doc.url }}" class="doc-card">
+    <div class="doc-icono">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+      </svg>
+      <span>PDF</span>
+    </div>
+    <div class="doc-info">
+      <span class="card-cat">{{ doc.data.categoria }}</span>
+      <h2 class="doc-titulo">{{ doc.data.title }}</h2>
+      {% if doc.data.descripcion %}<p class="doc-desc">{{ doc.data.descripcion | truncate(150) }}</p>{% endif %}
+    </div>
+    <div class="doc-accion">Ver →</div>
+  </a>
+  {% else %}
+  <p class="vacio">Todavía no hay documentos publicados.</p>
+  {% endfor %}
+</div>
+
+<style>
+  .pagina-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 3px solid var(--verde); }
+  .pagina-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--verde); font-family: 'Montserrat', sans-serif; font-weight: 700; margin-bottom: 0.5rem; }
+  .pagina-header h1 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+  .pagina-header h1 span { color: var(--verde); }
+  .pagina-header p { color: var(--gris); font-weight: 300; }
+  .docs-lista { display: flex; flex-direction: column; gap: 1rem; }
+  .doc-card { display: flex; align-items: center; gap: 1.5rem; text-decoration: none; color: inherit; padding: 1.5rem 2rem; background: var(--blanco); border: 1px solid var(--gris-claro); border-left: 4px solid var(--verde); transition: transform 0.2s; }
+  .doc-card:hover { transform: translateX(4px); }
+  .doc-icono { flex-shrink: 0; width: 56px; height: 56px; background: var(--verde-claro); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: var(--verde); }
+  .doc-icono span { font-size: 0.52rem; letter-spacing: 0.1em; font-weight: 800; color: var(--verde); font-family: 'Montserrat', sans-serif; }
+  .doc-info { flex: 1; }
+  .card-cat { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--verde); font-family: 'Montserrat', sans-serif; font-weight: 700; display: block; margin-bottom: 0.3rem; }
+  .doc-titulo { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem; color: var(--negro); }
+  .doc-desc { font-size: 0.85rem; color: var(--gris); font-weight: 300; line-height: 1.5; }
+  .doc-accion { flex-shrink: 0; font-size: 0.8rem; font-weight: 700; color: var(--verde); font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+  .vacio { color: var(--gris); font-style: italic; font-weight: 300; }
+  @media (max-width: 600px) { .doc-card { flex-wrap: wrap; } .doc-accion { display: none; } }
+</style>

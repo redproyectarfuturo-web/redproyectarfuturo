@@ -1,0 +1,12 @@
+{
+  "name": "redproyectarfuturo",
+  "version": "1.0.0",
+  "description": "Red Proyectar Futuro",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
