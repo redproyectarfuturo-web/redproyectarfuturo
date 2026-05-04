@@ -14,7 +14,7 @@ Este desplazamiento en la pregunta evidencia que no existe una única respuesta 
 
 Observamos que, en el contexto actual, la respuesta no está solamente en la maternidad, sino en una estructura más profunda: la feminización de la precariedad, las tareas de cuidado no remuneradas, la pobreza de tiempo, la salud mental y las desigualdades de género que siguen organizando la vida cotidiana de las adolescentes.
 
-##### **Menos embarazos, mismo ausentismo: la paradoja que nadie explica**
+### **Menos embarazos, mismo ausentismo: la paradoja que nadie explica**
 
 Según datos del Ministerio de Salud de la Nación y la Dirección Provincial de Estadística, la tasa de fecundidad adolescente en Argentina (y especialmente en el conurbano bonaerense) ha caído drásticamente en la última década (una reducción cercana al 50-60% desde 2014), siendo uno de los cambios demográficos más llamativos del siglo XXI en toda la región.
 
@@ -24,7 +24,7 @@ A pesar de no tener hijos propios, las adolescentes bonaerenses de sectores vuln
 
 Encontramos en el cuidado del hogar, de sus hermanos o familiares una de las principales razones por las que las jóvenes interrumpen su educación. Por otro lado, también observamos un factor invisibilizado hasta hace muy poco: muchas estudiantes faltan entre 3 y 5 días al mes por no contar con elementos de gestión menstrual o instalaciones adecuadas en las escuelas. Según informes de UNICEF Argentina, en hogares bajo la línea de pobreza, comprar toallitas o tampones compite con la compra de alimentos y, muchas veces, los insumos son dejados de lado.
 
-##### **Una mirada que aún está pendiente**
+### **Una mirada que aún está pendiente**
 
 Analizar el ausentismo escolar femenino desde la mirada tradicional que lo vincula casi exclusivamente con el embarazo adolescente es insuficiente y deja de lado múltiples determinantes que inciden en las trayectorias escolares.
 
