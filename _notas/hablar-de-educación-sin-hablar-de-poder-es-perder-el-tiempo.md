@@ -16,7 +16,7 @@ Mejorar la enseñanza importa. Pero si un docente trabaja en tres escuelas para 
 
 Ahí empieza el territorio de la política educativa.
 
-#### ¿Quién decide lo que se enseña?
+### ¿Quién decide lo que se enseña?
 
 La política educativa no es el conjunto de opiniones que cada uno tiene sobre cómo debería enseñarse, sino que es un campo de análisis que estudia cómo se toman las decisiones públicas en materia educativa: quién fija la agenda, qué actores tienen poder de veto, cómo se distribuyen los recursos, qué se evalúa y qué se invisibiliza. En otras palabras, cómo el Estado (y los actores que lo rodean) diseña, legítima e implementa las reglas que van a regir el sistema educativo.
 
@@ -26,7 +26,7 @@ En Argentina, ese campo tiene una historia cargada de ejemplos. La Ley Federal d
 
 **Pero las políticas educativas no existen solamente en los textos legales.** Son políticas públicas atravesadas por disputas de poder, capacidades estatales, restricciones presupuestarias e intereses muchas veces contradictorios. Entre lo que una ley promete y lo que efectivamente ocurre en las escuelas hay una distancia profundamente política.
 
-#### Estado, sociedad y educación: La escuela siempre fue política
+### Estado, sociedad y educación: La escuela siempre fue política
 
 **La política educativa argentina no puede entenderse sin preguntarse qué modelo de Estado y de desarrollo la sostiene en cada época.** A fines del siglo XIX, un Estado liberal y centralizador construyó la escuela pública como instrumento de integración nacional y formación de ciudadanía: la Ley 1420 de 1884 fue la expresión más clara de ese proyecto. La educación masiva y el modelo agroexportador compartían una misma lógica: incorporar población local y migrante a un orden político y económico en expansión.
 
@@ -38,7 +38,7 @@ El presente no escapa a esa lógica. La globalización no eliminó al Estado-nac
 
 **La escuela mide, certifica y clasifica, pero cada vez resulta más difícil responder para qué.** En una época que suele confundir productividad con propósito y conexión con comunidad, los sistemas educativos corren el riesgo de convertirse en máquinas de acreditación vacías de horizonte. **No se trata de un problema menor: una escuela que no sabe para qué forma termina formando para nada, o peor, para reproducir lo que ya existe sin cuestionarlo. Esa crisis de sentido no es pedagógica: es política. Y sólo puede abordarse desde la política educativa.**
 
-#### Poner el foco donde está el poder
+### Poner el foco donde está el poder
 
 **Hablar de política educativa implica aceptar una incomodidad: los problemas del sistema no son solamente técnicos, sino profundamente políticos.** Detrás de cada currícula hay una negociación. Detrás de cada presupuesto educativo hay una decisión sobre qué se prioriza y qué se posterga. Los organismos internacionales, los sindicatos, el sector privado y los gobiernos de turno intervienen con intereses que no siempre coinciden con los de los estudiantes.
 
